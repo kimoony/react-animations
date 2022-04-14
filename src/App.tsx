@@ -1,40 +1,27 @@
 import React from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { Routes, Route } from "react-router-dom";
+import Home from './components/Home';
+import BasicAnimatioin from './components/BasicAnimatioin';
+import Variants from './components/Variants';
+import Gestures from './components/Gestures';
+import Drag from './components/Drag';
+import Scroll from './components/Scroll';
+import Path from './components/Path';
 
-const Wrapper = styled.div`
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(45deg, #22128b, #2a68e2);
-`;
-
-const Box = styled(motion.div)`
-  width: 200px;
-  height: 200px;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 2px 3px rgba(0,0,0,0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
-`;
-
-
-
-const myVars = {
-  start: { scale: 0 },
-  end: { scale: 1, rotateZ: 360, transition: { type: "spring", delay: 0.5 } }
-}
 
 function App() {
   return (
-    <Wrapper>
-      <Box
-        variants={myVars}
-        initial="start"
-        animate="end"
-      />
-    </Wrapper>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="basic" element={<BasicAnimatioin />} />
+        <Route path="variants" element={<Variants />} />
+        <Route path="gestures" element={<Gestures />} />
+        <Route path="drag" element={<Drag />} />
+        <Route path="scroll" element={<Scroll />} />
+        <Route path="path" element={<Path />} />
+      </Routes>
+    </>
   );
 }
 
