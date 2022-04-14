@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -17,23 +17,37 @@ const Wrapper = styled.div`
 const Box = styled(motion.div)`
   width: 200px;
   height: 200px;
-  background-color: #fff;
-  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   box-shadow: 0 2px 3px rgba(0,0,0,0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;
 
-const myVars = {
-  start: { scale: 0 },
-  end: { scale: 1, rotateZ: 360, transition: { type: "spring", delay: 0.5 } }
-}
+const InBox = styled(motion.div)`
+  background-color: #fff;
+  height: 150px;
+  width: 150px;
+  align-self: center;
+  border-radius: 40px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
+`;
+
+
+
 
 function Drag() {
+  const constraintsRef = useRef<HTMLDivElement>(null)
   return (
     <Wrapper>
       <Link to="/">
         <button>Back</button>
       </Link>
-      <Box variants={myVars} initial="start" animate="end" />
+      <Box ref={constraintsRef}>
+        <InBox drag dragConstraints={constraintsRef} />
+      </Box>
     </Wrapper>
   )
 }
