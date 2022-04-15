@@ -8,6 +8,7 @@ import Drag from './components/motion/Drag';
 import Scroll from './components/motion/Scroll';
 import Path from './components/motion/Path';
 import Presence from './components/animatePresence/Presence';
+import Slider from './components/animatePresence/Slider';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="scroll" element={<Scroll />} />
         <Route path="path" element={<Path />} />
         <Route path="presence" element={<Presence />} />
+        <Route path="slider" element={<Slider />} />
       </Routes>
     </>
   );
