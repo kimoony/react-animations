@@ -53,6 +53,9 @@ function Home() {
         <Link to="/project">
           <button>Project</button>
         </Link>
+        <Link to="/report">
+          <button>Report</button>
+        </Link>
       </div>
     </Wrapper >
   )

@@ -10,7 +10,8 @@ import Path from './components/motion/Path';
 import Presence from './components/animatePresence/Presence';
 import Slider from './components/animatePresence/Slider';
 import LayoutAni from './components/motion/LayoutAni';
-import Project from './components/Project';
+import Project from './components/hoonProject/Project';
+import Report from './components/hoonProject/Report';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="presence" element={<Presence />} />
         <Route path="slider" element={<Slider />} />
         <Route path="project" element={<Project />} />
+        <Route path="report" element={<Report />} />
       </Routes>
     </>
   );

@@ -54,9 +54,9 @@ function Project() {
 
   return (
     <Wrapper>
-      {/* <Link to="/">
+      <Link to="/">
         <BackBtn>Back</BackBtn>
-      </Link> */}
+      </Link>
       <Grid>
         {["1", "2", "3", "4"].map((n) => (
           <Box onClick={() => setId(n)} key={n} layoutId={n} />
