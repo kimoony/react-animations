@@ -32,6 +32,9 @@ function Home() {
       <Link to="/path">
         <button>Path</button>
       </Link>
+      <Link to="/presence">
+        <button>Presence</button>
+      </Link>
     </Wrapper>
   )
 }
