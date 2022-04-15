@@ -50,7 +50,7 @@ function Home() {
       </div>
       <h2>Project</h2>
       <div>
-        <Link to="/roject">
+        <Link to="/project">
           <button>Project</button>
         </Link>
       </div>
