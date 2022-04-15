@@ -35,6 +35,9 @@ function Home() {
         <Link to="/path">
           <button>Path</button>
         </Link>
+        <Link to="/layout">
+          <button>Layout</button>
+        </Link>
       </div>
       <h2>AnimatePresence</h2>
       <div>
@@ -43,6 +46,12 @@ function Home() {
         </Link>
         <Link to="/slider">
           <button>Slider</button>
+        </Link>
+      </div>
+      <h2>Project</h2>
+      <div>
+        <Link to="/roject">
+          <button>Project</button>
         </Link>
       </div>
     </Wrapper >
