@@ -55,7 +55,14 @@ const Overlay = styled(motion.div)`
   align-items: center;
 `;
 
-function Report() {
+const hoverMotion = {
+  numOne: { scale: 1.1, x: -10, y: -10 },
+  numTwo: { scale: 1.1, x: 10, y: -10 },
+  numThree: { scale: 1.1, x: -10, y: 10 },
+  numFour: { scale: 1.1, x: 10, y: 10 }
+};
+
+export default function App() {
   const [id, setId] = useState<null | string>(null);
   const [clicked, setClicked] = useState(false);
   const toggleClicked = () => setClicked((prev) => !prev);
@@ -65,15 +72,48 @@ function Report() {
       <Grid>
         {["1", "2", "3", "4"].map((n) =>
           n === "1" ? (
-            <Box whileHover={{ scale: 1.1, x: -12, y: -10 }} />
-          ) : n === "4" ? (
-            <Box whileHover={{ scale: 1.1, x: 12, y: 10 }} />
-          ) : (
-            <Box onClick={() => setId(n)} key={n} layoutId={n}>
-              {!clicked && n === "2" ? <Circle layoutId="switch" /> : null}
-              {clicked && n === "3" ? <Circle layoutId="switch" /> : null}
+            <Box
+              onClick={() => setId(n)}
+              key={n}
+              layoutId={n}
+              whileHover={hoverMotion.numOne}
+            />
+          ) : n === "2" ? (
+            <Box
+              onClick={() => setId(n)}
+              key={n}
+              layoutId={n}
+              whileHover={hoverMotion.numTwo}
+            >
+              {!clicked ? (
+                <Circle
+                  layoutId="switch"
+                  initial={{
+                    backgroundColor: "#f9567a"
+                  }}
+                  animate={{
+                    backgroundColor: "#2986f5"
+                  }}
+                />
+              ) : null}
             </Box>
-          )
+          ) : n === "3" ? (
+            <Box
+              onClick={() => setId(n)}
+              key={n}
+              layoutId={n}
+              whileHover={hoverMotion.numThree}
+            >
+              {clicked ? <Circle layoutId="switch" /> : null}
+            </Box>
+          ) : n === "4" ? (
+            <Box
+              onClick={() => setId(n)}
+              key={n}
+              layoutId={n}
+              whileHover={hoverMotion.numFour}
+            />
+          ) : null
         )}
       </Grid>
       <AnimatePresence>
@@ -103,6 +143,3 @@ function Report() {
     </Wrapper>
   );
 }
-
-
-export default Report

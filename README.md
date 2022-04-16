@@ -5,12 +5,20 @@
 <br/>
 
 ### 기능
-- Basic Animation
-- Variants
-- Gestures
-- Drag
-- Scroll
-- Path
+- Motion
+  - Basic Animation
+  - Variants
+  - Gestures
+  - Drag
+  - Scroll
+  - Path
+  - Layout-Animation
+- AnimatePresence
+  - AnimatePresence
+  - Slider
+- hoonProject
+  - Project
+  - Report
 
 <br/>
 
